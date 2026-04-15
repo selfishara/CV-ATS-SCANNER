@@ -1,0 +1,41 @@
+CURRÍCULUM VITAE
+
+DATOS PERSONALES
+Nombre: Ana García López
+Email: ana.garcia@email.com
+Teléfono: +34 612 345 678
+LinkedIn: https://www.linkedin.com/in/ana-garcia
+GitHub: https://github.com/anagarcia
+Ubicación: Madrid, España
+
+PERFIL PROFESIONAL
+Desarrolladora Python con 3 años de experiencia en desarrollo web y análisis de datos.
+Apasionada por el software de calidad y las buenas prácticas de programación.
+
+EXPERIENCIA LABORAL
+
+Desarrolladora Backend — TechSolutions S.L. (2022 - actualidad)
+- Desarrollo de APIs REST con Django y FastAPI
+- Gestión de bases de datos PostgreSQL y MongoDB
+- Implementación de tests unitarios con pytest
+- Trabajo en equipo con metodología Scrum/Agile
+
+Desarrolladora Junior — StartupXYZ (2021 - 2022)
+- Desarrollo de scripts Python para automatización de tareas
+- Mantenimiento de aplicaciones Flask
+- Colaboración en proyectos con Git y GitHub
+
+EDUCACIÓN
+Grado en Ingeniería Informática — Universidad Complutense de Madrid (2017 - 2021)
+Especialización en Ingeniería del Software
+
+HABILIDADES TÉCNICAS
+Lenguajes: Python, SQL, JavaScript, HTML, CSS
+Frameworks: Django, FastAPI, Flask, React
+Bases de datos: PostgreSQL, MongoDB, Redis
+Herramientas: Git, Docker, Linux, Jenkins
+Metodologías: Agile, Scrum, TDD
+
+IDIOMAS
+Español: Nativo
+Inglés: Nivel B2
