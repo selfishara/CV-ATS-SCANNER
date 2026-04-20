@@ -50,7 +50,7 @@ def listar_cvs(carpeta):
     extensiones_soportadas = {".txt", ".pdf", ".docx"}
     cvs_encontrados = []
 
-    for nombre_archivo in os.listdir(carpeta):
+    for nombre_archivo in sorted(os.listdir(carpeta)):
         _, extension = os.path.splitext(nombre_archivo)
         if extension.lower() in extensiones_soportadas:
             cvs_encontrados.append(nombre_archivo)
