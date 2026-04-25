@@ -2,6 +2,7 @@ import os
 
 from analizador import analizar_cv, obtener_perfiles_trabajo
 from lector import leer_cv, listar_cvs
+from utilidades import extraer_email, extraer_telefono, extraer_url, generar_reporte
 
 
 CARPETA_CVS = "cvs"
@@ -101,6 +102,14 @@ def mostrar_resultado_analisis(nombre_cv, resultados):
     print("-" * 45)
 
 
+def _extraer_contacto(texto):
+    return {
+        "emails": extraer_email(texto),
+        "telefonos": extraer_telefono(texto),
+        "urls": extraer_url(texto),
+    }
+
+
 def opcion_analizar_un_cv():
     nombre_cv = pedir_cv_a_analizar()
     if not nombre_cv:
@@ -110,7 +119,10 @@ def opcion_analizar_un_cv():
     try:
         texto = leer_cv(ruta_cv)
         resultados = analizar_cv(texto, perfil_seleccionado)
+        info_contacto = _extraer_contacto(texto)
         mostrar_resultado_analisis(nombre_cv, resultados)
+        ruta = generar_reporte(nombre_cv, resultados, info_contacto, CARPETA_REPORTES)
+        print(f"Reporte guardado en: {ruta}")
     except Exception as error:
         print(f"\nNo se pudo analizar el CV: {error}")
 
@@ -126,13 +138,25 @@ def opcion_analizar_todos():
         try:
             texto = leer_cv(ruta_cv)
             resultados = analizar_cv(texto, perfil_seleccionado)
+            info_contacto = _extraer_contacto(texto)
             mostrar_resultado_analisis(nombre_cv, resultados)
+            ruta = generar_reporte(nombre_cv, resultados, info_contacto, CARPETA_REPORTES)
+            print(f"Reporte guardado en: {ruta}")
         except Exception as error:
             print(f"\nNo se pudo analizar '{nombre_cv}': {error}")
 
 
-def opcion_no_implementada(numero):
-    print(f"\n[Opcion {numero}] Proximamente disponible en la Fase 3.")
+def opcion_ver_reportes():
+    reportes = sorted(
+        f for f in os.listdir(CARPETA_REPORTES) if f.endswith(".txt")
+    )
+    if not reportes:
+        print("\nNo hay reportes generados aun.")
+        return
+
+    print(f"\nReportes disponibles ({len(reportes)}):")
+    for i, nombre in enumerate(reportes, start=1):
+        print(f"  {i}. {nombre}")
 
 
 def main():
@@ -155,7 +179,7 @@ def main():
         elif opcion == "4":
             opcion_analizar_todos()
         elif opcion == "5":
-            opcion_no_implementada(5)
+            opcion_ver_reportes()
         elif opcion == "0":
             print("\nHasta luego.")
             break
