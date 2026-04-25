@@ -1,2 +1,15 @@
 # Github
 .github/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Reportes generados (salida de ejecución)
+reportes/*.txt
+
+# Archivos de volcado de Windows
+*.stackdump
