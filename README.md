@@ -44,4 +44,12 @@ Los CVs se colocan manualmente en la carpeta `cvs/`. Los reportes `.txt` se guar
 | 2 | Análisis y puntuación | ✓ Completa |
 | 3 | Utilidades: regex y reportes | ✓ Completa |
 | 4 | Integración del menú | ✓ Completa |
-| 5 | Pulido: CVs de ejemplo y docs | Pendiente |
+| 5 | Pulido: CVs de ejemplo y docs | ✓ Completa |
+
+## CVs de ejemplo incluidos
+
+| Archivo | Formato | Perfil |
+|---------|---------|--------|
+| `cvs/ana_garcia_cv.txt` | .txt | Desarrollador Python |
+| `cvs/carlos_mendoza_cv.docx` | .docx | Marketing Digital |
+| `cvs/maria_lopez_cv.pdf` | .pdf | Administración |
