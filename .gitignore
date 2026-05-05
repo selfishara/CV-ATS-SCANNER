@@ -13,3 +13,7 @@ reportes/*.txt
 
 # Archivos de volcado de Windows
 *.stackdump
+
+# Instrucciones internas para Claude Code
+CLAUDE.md
+SARA_FEDE_ESTADO_PROYECTO.md

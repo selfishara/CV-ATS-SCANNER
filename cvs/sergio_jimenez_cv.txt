@@ -1,0 +1,46 @@
+CURRÍCULUM VITAE
+
+DATOS PERSONALES
+Nombre: Sergio Jiménez García
+Email: sergio.jimenez@email.com
+Teléfono: +34 654 321 987
+LinkedIn: https://www.linkedin.com/in/sergio-jimenez-qa
+GitHub: https://github.com/sergiojimenezqa
+Ubicación: Valencia, España
+
+PERFIL PROFESIONAL
+QA Engineer especializado en automatización de pruebas con 4 años de experiencia
+diseñando estrategias de testing para aplicaciones web y APIs. Apasionado por el
+testing como disciplina y por integrar la calidad en el ciclo de desarrollo.
+
+EXPERIENCIA LABORAL
+
+QA Automation Engineer — TestingPro S.L. (2023 - actualidad)
+- Diseño e implementación de suites end-to-end con Selenium y Cypress
+- Automatización de regresión visual con Playwright
+- Pipelines de CI/CD en Jenkins ejecutando los tests en cada PR
+- Diseño de escenarios BDD con Cucumber para validar requisitos de negocio
+- Trabajo en equipo bajo metodología Scrum
+
+QA Engineer — SoftQuality (2021 - 2023)
+- Tests unitarios e integración con JUnit y TestNG sobre microservicios Java
+- Tests automáticos de APIs REST con Postman y Newman
+- Tests de backend Python con pytest y pytest-bdd
+- Reporte de bugs en Jira y gestión de versiones con Git/GitFlow
+
+EDUCACIÓN
+FP Superior en Desarrollo de Aplicaciones Web — IES La Costera (2019 - 2021)
+ISTQB Foundation Level (2022)
+
+HABILIDADES TÉCNICAS
+Automatización web: Selenium, Cypress, Playwright
+Frameworks de testing: JUnit, TestNG, pytest, Cucumber
+APIs: Postman, Newman, REST Assured
+CI/CD: Jenkins, GitHub Actions, GitLab CI
+Lenguajes: Java, Python, JavaScript
+Metodologías: BDD, TDD, Scrum, Kanban
+Control de versiones: Git, GitHub, Bitbucket
+
+IDIOMAS
+Español: Nativo
+Inglés: Nivel B2 (First Certificate)
