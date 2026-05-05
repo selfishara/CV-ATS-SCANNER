@@ -1,3 +1,4 @@
+import re
 import unicodedata
 
 
@@ -14,6 +15,7 @@ PERFILES_TRABAJO = {
             "Docker",
             "pytest",
             "APIs REST",
+            "Scrum",
         ],
         "secciones_esperadas": [
             "perfil profesional",
@@ -62,6 +64,72 @@ PERFILES_TRABAJO = {
             "competencias",
         ],
     },
+    "Desarrollo Aplicaciones Multiplataforma (DAM)": {
+        "palabras_clave": [
+            "Java",
+            "Kotlin",
+            "Android",
+            "Android Studio",
+            "Flutter",
+            "React Native",
+            "Ionic",
+            "XML",
+            "Gradle",
+            "SQLite",
+            "Git",
+            "Scrum",
+        ],
+        "secciones_esperadas": [
+            "perfil profesional",
+            "experiencia laboral",
+            "educacion",
+            "habilidades tecnicas",
+        ],
+    },
+    "Desarrollo Aplicaciones Web (DAW)": {
+        "palabras_clave": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Vue",
+            "Node.js",
+            "PHP",
+            "Laravel",
+            "MySQL",
+            "Git",
+            "Scrum",
+        ],
+        "secciones_esperadas": [
+            "perfil profesional",
+            "experiencia laboral",
+            "educacion",
+            "habilidades tecnicas",
+        ],
+    },
+    "QA Automation": {
+        "palabras_clave": [
+            "Selenium",
+            "Cypress",
+            "Playwright",
+            "JUnit",
+            "TestNG",
+            "pytest",
+            "Cucumber",
+            "Jenkins",
+            "Postman",
+            "BDD",
+            "Git",
+            "Scrum",
+        ],
+        "secciones_esperadas": [
+            "perfil profesional",
+            "experiencia laboral",
+            "educacion",
+            "habilidades tecnicas",
+        ],
+    },
 }
 
 
@@ -77,13 +145,25 @@ def obtener_perfiles_trabajo():
     return list(PERFILES_TRABAJO.keys())
 
 
+def _coincide_termino(texto_normalizado, termino):
+    """Busca el termino en el texto normalizado respetando limites de palabra.
+
+    Usa lookarounds en lugar de \\b para que terminos como 'Node.js' o 'C#'
+    se comporten correctamente: 'SQL' no matchea dentro de 'MySQL', pero
+    'Node.js' si matchea aunque vaya seguido de un signo de puntuacion.
+    """
+    termino_normalizado = normalizar_texto(termino)
+    patron = r"(?<!\w)" + re.escape(termino_normalizado) + r"(?!\w)"
+    return re.search(patron, texto_normalizado) is not None
+
+
 def buscar_palabras_clave(texto, palabras_clave):
     texto_normalizado = normalizar_texto(texto)
     encontradas = []
     faltantes = []
 
     for palabra in palabras_clave:
-        if normalizar_texto(palabra) in texto_normalizado:
+        if _coincide_termino(texto_normalizado, palabra):
             encontradas.append(palabra)
         else:
             faltantes.append(palabra)
@@ -164,3 +244,10 @@ def analizar_cv(texto, perfil):
         "puntuacion": puntuacion["puntuacion"],
         "categoria": puntuacion["categoria"],
     }
+
+
+def analizar_contra_todos(texto):
+    """Analiza el CV contra todos los perfiles y los ordena por puntuacion."""
+    resultados = [analizar_cv(texto, perfil) for perfil in obtener_perfiles_trabajo()]
+    resultados.sort(key=lambda r: r["puntuacion"], reverse=True)
+    return resultados
