@@ -1,2 +1,4 @@
 PyPDF2
 python-docx
+colorama
+pytest
